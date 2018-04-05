@@ -36,7 +36,7 @@ gem 'pry-rails'
 gem 'annotate'
 gem 'bcrypt'
 gem 'jquery-rails'
-require 'multi_json'
+gem 'multi_json'
 
 
 group :development, :test do
