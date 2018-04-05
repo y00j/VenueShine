@@ -24,7 +24,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch"
+    "start": "webpack --watch",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
@@ -39,5 +40,9 @@
   "homepage": "https://github.com/yujiezhu718/venueshine#readme",
   "devDependencies": {
     "webpack-cli": "^2.0.13"
+  },
+  "engines": {
+    "node": "6.10.1",
+    "npm": "3.10.10"
   }
 }
