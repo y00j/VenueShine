@@ -10,9 +10,10 @@ class Greeting extends React.Component {
   sessionLinks() {
     return(
       <nav className="login-signup">
-        <Link to="/login">Login</Link>
+        <button onClick={() => this.props.openModal('login')}>Login</button>
         <br/>
-        <Link to="/signup">Sign up!</Link>
+        &nbsp;or&nbsp;
+        <button onClick={() => this.props.openModal('signup')}>Signup</button>
       </nav>
     );``
   };
