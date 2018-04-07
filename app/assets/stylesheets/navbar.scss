@@ -9,7 +9,7 @@ nav.navbar {
   display: flex;
   justify-content: space-between;
   height: 60px;
-  font-family: sans-serif;
+  font-family: sans-serifBenton Sans,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
   border-bottom: 1px solid #D2D6DF
 }
 .navbar a {
@@ -22,7 +22,7 @@ nav.navbar {
 .nav-minor {
   display: flex;
   justify-content: space-around;
-  text-transform: uppercase;
+  font-weight: 100;
 
 
   .session-buttons {
@@ -31,6 +31,8 @@ nav.navbar {
     flex-direction: row;
     align-items: center;
     justify-content: space-between; 
+    color: #666a73;
+
   }
 
     a {
@@ -57,12 +59,8 @@ nav.navbar {
 
 #logo {
   font-family: 'Ubuntu', sans-serif;
-  color: #00FFFF;
+  color: #f6682f;
   font-size: 20px;
-  text-shadow:
-   -1px -1px 0 #000,  
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-     1px 1px 0 #000;
+
 }
 

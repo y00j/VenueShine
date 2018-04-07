@@ -19,6 +19,10 @@ class SessionForm extends React.Component {
     });
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+ 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state)
@@ -46,45 +50,47 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    // debugger
     return (
       <div className="login-form-container">
-        <div className="login-modal-title">
-          Please {this.props.formType} or {this.props.otherForm}
-          {this.renderErrors()}
-        </div>  
+       
         <form onSubmit={this.handleSubmit} className="login-form-box">
           
           <div className="login-form">
-      
-         
+              <h1 id="login-header">Let's get started</h1>
+
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
-                placeholder="username"
+                placeholder="Username"
               />
 
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
                 className="login-input"
-                placeholder="email"
+                placeholder="Email"
               />
 
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
-                placeholder="password"
+                placeholder="Password"
 
               />
-    
-
-            <input className="session-submit" type="submit" value={this.props.formType} />
+            <input className="session-submit" type="submit" value={this.props.formText} />
            
+            <div className="demoLogin" onClick={this.demoLogin}>Demo Login</div>
+
+            <div className="login-modal-title">
+              Please {this.props.formType} or {this.props.otherForm}
+              {this.renderErrors()}
+            </div>  
           </div>
         </form>
-        <button className="demoLogin" onClick={this.demoLogin}>Demo Login</button>
+        { this.props.altText } 
       </div>
     );
   }

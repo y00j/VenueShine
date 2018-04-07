@@ -4,12 +4,14 @@ import { login } from '../../actions/session_actions'
 import SessionForm from './session_form'
 import { Link } from 'react-router-dom';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import { receiveErrors } from '../../actions/session_actions';
 
 
 
 const mapStateToProps = (state) => ({
   errors: state.errors.session,
   formType: "login",
+  formText: "Login"
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -20,7 +22,8 @@ const mapDispatchToProps = (dispatch) => ({
       Signup
     </button>
   ),
-  closeModal: () => dispatch(closeModal())
+  closeModal: () => dispatch(closeModal()),
+  clearErrors: () => dispatch(receiveErrors([]))
 });
 
 export default connect(
