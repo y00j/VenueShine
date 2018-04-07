@@ -12,7 +12,8 @@ import Modal from './modal/modal';
 import GreetingContainer from './greeting/greeting_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
-import HeroBannerContainer from './hero_container/hero_banner'
+import HeroBannerContainer from './hero_banner/hero_banner';
+import EventIndexContainer from './event_index/event_index_container';
 
 const App = () => (
   <div>
@@ -20,9 +21,8 @@ const App = () => (
       <Modal />  
       <GreetingContainer />
     </header>
-    <Switch>
-      <Route path="/" component={HeroBannerContainer}/>
-    </Switch>
+    <Route path="/" component={HeroBannerContainer}/>
+    <EventIndexContainer />
   </div>
 );
 
