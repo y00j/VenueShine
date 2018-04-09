@@ -17,8 +17,8 @@ class Greeting extends React.Component {
        
         return (
         <div className="session-buttons">
-          <a href="#" id="login-button" onClick={() => this.props.openModal('login')}>Login</a>
-          <a href="#" id="signup-button" onClick={() => this.props.openModal('signup')}>Signup</a>
+          <a href="#" id="login-button" onClick={() => this.props.openModal('login')}>sign in</a>
+          <a href="#" id="signup-button" onClick={() => this.props.openModal('signup')}>create account</a>
         </div>
       );
     }
@@ -34,7 +34,7 @@ class Greeting extends React.Component {
         </div>
         <div className="nav-minor">
           {this.sessionButtons()}
-          <Link to="/new">Create Event</Link>
+          <Link className="create-event"to="/new">Create Event</Link>
         </div>
       </nav>  
     );  

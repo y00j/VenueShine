@@ -52,7 +52,7 @@ class EventForm extends React.Component {
     formData.append("event[organizer_id]", this.state.organizerId);
 
     if (this.state.imageFile) formData.append("event[image]", this.state.imageFile);
-    this.props.createEvent(formData);
+    this.props.createEvent(formData).then(() => this.props.history.push('/'));
   }
 
   render() {
@@ -71,4 +71,4 @@ class EventForm extends React.Component {
   }
 }
 
-export default EventForm;
+export default withRouter(EventForm);

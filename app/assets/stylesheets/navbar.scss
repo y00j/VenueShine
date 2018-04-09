@@ -10,6 +10,7 @@ nav.navbar {
   justify-content: space-between;
   height: 60px;
   font-family: sans-serifBenton Sans,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
+
   border-bottom: 1px solid #D2D6DF
 }
 .navbar a {
@@ -22,7 +23,9 @@ nav.navbar {
 .nav-minor {
   display: flex;
   justify-content: space-around;
-  font-weight: 100;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
 
 
   .session-buttons {
@@ -32,12 +35,22 @@ nav.navbar {
     align-items: center;
     justify-content: space-between; 
     color: #666a73;
-
+    :hover { background-color: #EFF2F5 } 
   }
 
-    a {
+  a {
       border-left: 1px solid #EFF2F5;
   }
+  
+  .create-event {
+    color: #0093D7;
+    font-weight: 600;
+  }
+
+  .create-event:hover {
+    color: #013653  
+  }
+
 
 }
 
@@ -58,9 +71,17 @@ nav.navbar {
 }
 
 #logo {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: briteicons,
+  "Benton Sans",
+  "Helvetica Neue",
+  Helvetica,
+  Roboto,
+  Arial,
+  sans-serif;
   color: #f6682f;
-  font-size: 20px;
+  font-size: 20.5px;
+  font-weight: 575;
+  letter-spacing: 0.5px;
 
 }
 
