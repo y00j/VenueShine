@@ -5,7 +5,6 @@ import { fetchEvent } from '../../actions/event_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger;
   return(
     {
       event: state.entities.events[ownProps.match.params.eventId]

@@ -11,15 +11,16 @@ class Event extends React.Component {
   }
 
   render() {
-    // debugger
     return (
-      <ul className="event-index-container">
-        {
-          this.props.events.map((event) =>  
-            <EventIndexItem key={event.id} event={event} />
-          )
-        }
-      </ul>
+      <div className="event-index-wrapper">
+        <ul className="event-index-container">
+          {
+            this.props.events.map((event) =>  
+              <EventIndexItem key={event.id} event={event} />
+            )
+          }
+        </ul>
+      </div>
     );
 
   }

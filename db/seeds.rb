@@ -13,7 +13,7 @@ user = User.create!({username: "michael", email: "michael@michael.com", password
 
 event1 = Event.create!({
   title: "the greatest event", 
-  address: "best address", 
+  address: "some address", 
   description: "best event ever",
   tickets_available: 100,
   start_date: Time.now,
@@ -23,7 +23,27 @@ event1 = Event.create!({
 
 event2 = Event.create({
   title: "2nd the greatest event", 
-  address: "2nd best address", 
+  address: "2nd some address", 
+  description: "best event ever",
+  tickets_available: 100,
+  start_date: Time.now,
+  end_date: Time.now,
+  organizer_id: user.id
+})
+
+event3 = Event.create!({
+  title: "3rd greatest event", 
+  address: "some address", 
+  description: "best event ever",
+  tickets_available: 100,
+  start_date: Time.now,
+  end_date: Time.now,
+  organizer_id: user.id
+})
+
+event4 = Event.create({
+  title: "4th greatest event", 
+  address: "2nd some address", 
   description: "best event ever",
   tickets_available: 100,
   start_date: Time.now,
