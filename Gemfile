@@ -37,6 +37,9 @@ gem 'annotate'
 gem 'bcrypt'
 gem 'jquery-rails'
 gem 'multi_json'
+gem 'aws-sdk', '< 3.0'
+gem "paperclip", '~> 5.0.0'
+gem 'figaro'
 
 
 group :development, :test do

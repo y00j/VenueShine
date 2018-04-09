@@ -1,0 +1,12 @@
+.event-index-container {
+  display: flex;
+  flex-flow: row wrap; 
+}
+
+.event-index-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33%;
+  
+}

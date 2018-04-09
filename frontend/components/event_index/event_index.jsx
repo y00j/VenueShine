@@ -1,9 +1,9 @@
 import React from 'react';
-// import EventIndexItem from './event_index_item';
+import EventIndexItem from './event_index_item';
 
 class Event extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   componentDidMount() {
@@ -13,17 +13,14 @@ class Event extends React.Component {
   render() {
     // debugger
     return (
-      <ul>
+      <ul className="event-index-container">
         {
           this.props.events.map((event) =>  
-            <div key={event.id}>
-              <div>{event.title}</div>
-              <img src={`${event.image_url}`} alt="stuff"/>  
-            </div>
+            <EventIndexItem key={event.id} event={event} />
           )
         }
       </ul>
-    )
+    );
 
   }
 }

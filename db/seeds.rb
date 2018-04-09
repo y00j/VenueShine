@@ -14,7 +14,6 @@ user = User.create!({username: "michael", email: "michael@michael.com", password
 event1 = Event.create!({
   title: "the greatest event", 
   address: "best address", 
-  image_url: "/Users/Yujie/Desktop/App Academy/projects/venue_shine/app/assets/images/alcohol-beverage-bottles.jpg",
   description: "best event ever",
   tickets_available: 100,
   start_date: Time.now,
@@ -25,7 +24,6 @@ event1 = Event.create!({
 event2 = Event.create({
   title: "2nd the greatest event", 
   address: "2nd best address", 
-  image_url: "/Users/Yujie/Desktop/App Academy/projects/venue_shine/app/assets/images/alcohol-beverage-bottles.jpg",
   description: "best event ever",
   tickets_available: 100,
   start_date: Time.now,

@@ -23,7 +23,7 @@ class Greeting extends React.Component {
       );
     }
    
-  };
+  }
 
   render () {
 
@@ -34,7 +34,7 @@ class Greeting extends React.Component {
         </div>
         <div className="nav-minor">
           {this.sessionButtons()}
-          <a href="#" >Create Event</a>
+          <Link to="/new">Create Event</Link>
         </div>
       </nav>  
     );  
@@ -42,4 +42,4 @@ class Greeting extends React.Component {
 
 }
 
-export default Greeting
+export default Greeting;

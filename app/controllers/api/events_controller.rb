@@ -23,7 +23,7 @@ class Api::EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-
+    # debugger
     if @event.save 
       render "api/events/show"
     else 
@@ -35,7 +35,7 @@ class Api::EventsController < ApplicationController
     params.require(:event).permit(
       :title, 
       :address, 
-      :image_url, 
+      :image, 
       :description,
       :tickets_available,
       :start_date,

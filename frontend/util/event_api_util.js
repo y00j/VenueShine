@@ -11,3 +11,14 @@ export const fetchEvent = (id) => (
     url: `/api/events/${id}`
   })
 );
+
+export const createEvent = (event) => (
+  $.ajax({
+    url: 'api/events',
+    method: "POST",
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: event 
+  })
+);
