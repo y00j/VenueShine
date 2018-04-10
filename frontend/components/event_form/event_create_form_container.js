@@ -4,11 +4,11 @@ import EventForm from './event_form';
 import { createEvent } from '../../actions/event_actions';
 
 const mapStateToProps = (state) => ({
-  
+  event: {}
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  createEvent: (event) => dispatch(createEvent(event))
+  handleEvent: (event) => dispatch(createEvent(event))
 });
 
 export default connect(

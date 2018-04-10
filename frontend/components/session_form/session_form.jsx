@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class SessionForm extends React.Component {
  
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state)
+    const user = Object.assign({}, this.state);
     this.props.processForm(user).then(this.props.closeModal);
   }
 
@@ -50,7 +50,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    // debugger
     return (
       <div className="login-form-container">
        

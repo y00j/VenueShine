@@ -1,10 +1,17 @@
-.slider-containers {
-  height: 700px;
+
+// .slide-containers {
+
+// }
+
+.slide img{
+
+  max-height: 500px;
   width: 100%;
-  background-repeat: no-repeat;
+  // height: auto;
+  object-fit: fill;
+  // object-fit: cover;
 }
 
-.slide.one {
-  background-image: image-url("cheerful-club-concert.jpg");
-  background-size: 100%;
-}
+// .slide.one {
+//   background-size: 100%;
+// }

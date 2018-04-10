@@ -9,15 +9,15 @@ import { fetchEvents } from "./actions/event_actions";
 document.addEventListener('DOMContentLoaded', () => {
 
 
-  const store = configureStore();
-  // if (window.currentUser) {
-  //   const preloadedState = { session: { currentUser: window.currentUser} };
-  //   store = configureStore(preloadedState);
-  //   delete window.currentUser;
-  // } else {
-  //   store = configureStore();
-  // }
-  window.store = store;
+  let store;
+  if (window.currentUser) {
+    const preloadedState = { session: { currentUser: window.currentUser} };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
+  // window.store = store;
   const root = document.getElementById('root');
   // testing 
   window.getState = store.getState;

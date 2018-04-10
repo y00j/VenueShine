@@ -14,8 +14,10 @@ import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import HeroBannerContainer from './hero_banner/hero_banner';
 import EventIndexContainer from './event_index/event_index_container';
-import EventFormContainer from './event_form/event_form_container';
+import EventCreateFormContainer from './event_form/event_create_form_container';
+import EventEditFormContainer from './event_form/event_edit_form_container';
 import EventShowContainer from './event_show/event_show_container';
+
 
 const App = () => (
   <div>
@@ -25,7 +27,8 @@ const App = () => (
     </header>
     <Route exact path="/" component={HeroBannerContainer} />
     <Route exact path="/" component={EventIndexContainer} />
-    <Route exact path="/new" component={EventFormContainer} />
+    <Route exact path="/new" component={EventCreateFormContainer} />
+    <Route exact path="/events/:eventId/edit" component={EventEditFormContainer} />
     <Route exact path="/events/:eventId" component={EventShowContainer} />
   </div>
 );

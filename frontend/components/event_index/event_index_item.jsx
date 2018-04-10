@@ -21,7 +21,7 @@ const EventIndexItem = ({event}) => {
             #Category
           </Link>
           <Link className="bookmark-icon" to="/">
-            <i class="material-icons">bookmark_border</i>
+            <i className="material-icons">bookmark_border</i>
           </Link>
         </div>
       </div>

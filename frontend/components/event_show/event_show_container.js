@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import EventShow from './event_show';
-import { fetchEvent } from '../../actions/event_actions';
+import { fetchEvent, deleteEvent } from '../../actions/event_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchEvent: (id) => dispatch(fetchEvent(id))
+  fetchEvent: (id) => dispatch(fetchEvent(id)),
+  deleteEvent: (id) => dispatch(deleteEvent(id))
 });
 
 export default connect(
