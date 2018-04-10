@@ -50,3 +50,14 @@ event4 = Event.create({
   end_date: Time.now,
   organizer_id: user.id
 })
+
+event5 = Event.create({
+  title: "Gutter Swan Americana Happy Hour",
+  address: "PianoFight  Bar Stage  144 Taylor St  San Francisco, CA 94102", 
+  description: "Americana duo Gutter Swan emerged onto the San Francisco music scene in 2015, featuring the powerful, emotive vocals of Loryn Barbeau, and the disarming yet complex guitar of Steve Egelman. Steve and Loryn bonded over a love of music, whiskey and punctuality, and thus Gutter Swan was born.",
+  tickets_available: 10,
+  start_date: "2018-04-19",
+  end_date: "2018-04-26",
+  image: "http://s3.us-west-1.amazonaws.com/venueshine-dev/events/images/000/000/021/original/eventbrite__show_img.jpg?1523377252",
+  organizer_id: 5,
+})

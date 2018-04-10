@@ -17,7 +17,6 @@ class EventForm extends React.Component {
       end_date: this.props.event.end_date || null,
       organizer_id: this.props.event.organizer_id || null 
     };
-    // debugger;
     this.updateFile = this.updateFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }

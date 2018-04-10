@@ -31,7 +31,6 @@ export const createEvent = (event) => {
 };
 
 export const updateEvent = (event, id) => {
-  // debugger;
   return(
     $.ajax({
       url: `/api/events/${id}`,

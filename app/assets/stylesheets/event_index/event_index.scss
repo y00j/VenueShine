@@ -30,6 +30,7 @@
 
     height: 105.5px;
     padding: 5px 15px;
+
     .event-date {
       text-overflow: ellipsis;
       color: #45494E;
@@ -94,17 +95,18 @@
 }
 
 .event-index-inner-wrapper {
+  max-width: 100%;
   background-color: white;
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, .1);
-   font-family: Benton Sans,
-   -apple-system,
-   BlinkMacSystemFont,
-   Roboto,
-   Helvetica Neue,
-   Helvetica,
-   Tahoma,
-   Arial,
-   sans-serif;
+  font-family: Benton Sans,
+  -apple-system,
+  BlinkMacSystemFont,
+  Roboto,
+  Helvetica Neue,
+  Helvetica,
+  Tahoma,
+  Arial,
+  sans-serif;
 }
 
 
