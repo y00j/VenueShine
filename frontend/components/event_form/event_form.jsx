@@ -12,10 +12,10 @@ class EventForm extends React.Component {
       description: this.props.event.description || null,
       imageFile: this.props.event.imageFile || null,
       imageUrl: this.props.event.imageUrl || null,
-      tickets_available: this.props.event.tickets_available || null,
-      start_date: this.props.event.start_date || null,
-      end_date: this.props.event.end_date || null,
-      organizer_id: this.props.event.organizer_id || null 
+      ticketsAvailable: this.props.event.ticketsAvailable || null,
+      startDate: this.props.event.startDate || null,
+      endDate: this.props.event.endDate || null,
+      organizerId: this.props.event.organizerId || null 
     };
     this.updateFile = this.updateFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -50,22 +50,22 @@ class EventForm extends React.Component {
     formData.append("event[organizer_id]", this.state.organizerId);
 
     if (this.state.imageFile) formData.append("event[image]", this.state.imageFile);
-    this.props.handleEvent(formData, this.props.event.id).then(() => this.props.history.push('/'));
+    this.props.handleEvent(formData, this.props.event.id).then(() => this.props.history.push(`/events/${this.props.event.id}`));
   }
 
   render() {
 
     return <div className="form-fields">
-        <input type="text" onChange={this.update("title")} placeholder={this.state.title || "title"} />
-        <input type="text" onChange={this.update("address")} placeholder={this.state.address || "address"} />
-        <textarea onChange={this.update("description")} placeholder={this.state.description || "description"} ></textarea>
-        <input type="number" onChange={this.update("ticketsAvailable")} placeholder={this.state.ticketsAvailable || "tickets available"} />
-        <input type="date" onChange={this.update("startDate")} placeholder="start_date" />
-        <input type="date" onChange={this.update("endDate")} placeholder="end_date" />
-        <input type="number" onChange={this.update("organizerId")} placeholder="organizer_id" />
-        <input type="file" onChange={this.updateFile} placeholder="file" />
+        <input type="text" value={this.state.title} onChange={this.update("title")} placeholder={"title"} />
+        <input type="text" onChange={this.update("address")} value={this.state.address} placeholder={"address"} />
+        <textarea onChange={this.update("description")} value={this.state.description} placeholder={"description"} />
+        <input type="number" onChange={this.update("ticketsAvailable")} value={this.state.ticketsAvailable} placeholder={"tickets available"} />
+        <input type="date" onChange={this.update("startDate")} value={this.state.startDate} />
+        <input type="date" onChange={this.update("endDate")} value="2018-03-01" />
+        <input type="number" onChange={this.update("organizerId")} value={this.state.organizerId} />
+        <input type="file" onChange={this.updateFile}  />
         <button onClick={this.handleSubmit}>Create Event</button>
-        <img src={this.state.imageUrl} />
+        <img src={this.props.event.image} />
       </div>;
   }
 }

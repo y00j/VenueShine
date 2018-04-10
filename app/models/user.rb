@@ -2,18 +2,24 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  username        :string           not null
-#  email           :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  profile_image   :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id                 :integer          not null, primary key
+#  username           :string           not null
+#  email              :string           not null
+#  password_digest    :string           not null
+#  session_token      :string           not null
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
-
 class User < ApplicationRecord
+
+  has_attached_file :image, default_url: "https://s3-us-west-1.amazonaws.com/venueshine-dev/events/pillars_of_creation.jpg"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  
   validates :username, :email, :password_digest, :session_token, presence: true
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
