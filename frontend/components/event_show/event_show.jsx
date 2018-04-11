@@ -5,6 +5,7 @@ class EventShow extends React.Component {
   constructor(props) {
     super(props); 
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
@@ -13,14 +14,18 @@ class EventShow extends React.Component {
 
   handleDelete() {
     this.props.deleteEvent(this.props.event.id).then(() => this.props.history.push('/'));
-  }  
+  }
+  
+  handleScroll() {
+    debugger;
+  }
 
   render() {
     const event = this.props.event;
     if (event === undefined) {
       return <div>loading</div>;
     }
-    return <div className="event-show-outer-wrapper">
+    return <div onScroll={this.handleScroll} className="event-show-outer-wrapper">
         <div className="event-show-wrapper">
           <div className="event-banner-container">
             <div className="event-banner-image">
@@ -33,8 +38,7 @@ class EventShow extends React.Component {
                   <div className="banner-date-day">99</div>
                 </div>
                 <div className="banner-title">
-                  {event.title}Singles Charity Ball to Restore Sight to the
-                  Blind
+                  {event.title}
                 </div>
                 <div className="banner-host">by {event.organizerId}</div>
               </div>
@@ -44,7 +48,7 @@ class EventShow extends React.Component {
             </div>
           </div>
 
-          <div className="event-show-ticket-bar"></div>
+          <div className="event-show-ticket-bar" onScroll={this.handleScroll}></div>
 
           <div className="content-body">
             <div className="col-one-flex">

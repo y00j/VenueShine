@@ -22,8 +22,13 @@ class Event < ApplicationRecord
   has_attached_file :image, default_url: "https://s3-us-west-1.amazonaws.com/venueshine-dev/events/pillars_of_creation.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   
-  # belongs_to :organizer,
-  #   class_name: "User",
-  #   foreign_key: :organizer_id
+  belongs_to :organizer,
+    class_name: :User,
+    foreign_key: :organizer_id,
+    primary_key: :id
+
+  has_many :tickets
+
+  
 end
 

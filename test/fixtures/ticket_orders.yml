@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: ticket_orders
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer          not null
+#  ticket_id  :integer          not null
+#  quantity   :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  ticket_id: 1
+  quantity: 1
+
+two:
+  user_id: 1
+  ticket_id: 1
+  quantity: 1
