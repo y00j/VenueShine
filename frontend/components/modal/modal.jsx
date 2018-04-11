@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
-import RegistrationFormContainer from '../event_registration/event_registration_form';
+import RegistrationFormContainer from '../ticket_registration/ticket_registration_form_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -38,7 +38,6 @@ const mapStateToProps = (state) => {
   
   return {
     modal: state.ui.modal,
-
   };
 };
 

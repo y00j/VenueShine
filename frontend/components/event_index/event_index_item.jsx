@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const EventIndexItem = ({event}) => {
-  return <li className="event-index-item">
+  return (
+    <li className="event-index-item">
       <div className="event-index-inner-wrapper">
         <Link to={`/events/${event.id}`}>
           <img src={event.image} alt="pic-index-image" className="event-index-image" />
@@ -25,7 +26,8 @@ const EventIndexItem = ({event}) => {
           </Link>
         </div>
       </div>
-    </li>;
+  </li>
+  );
 };
 
 export default EventIndexItem;
