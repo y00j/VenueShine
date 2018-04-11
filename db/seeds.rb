@@ -68,6 +68,7 @@ ticket1 = Ticket.create({
   name: "general admission",
   price: 99.99,
   event_id: event1.id,
+  ticket_quantity: 20
 })
 
 ticket_order1 = TicketOrder.create({

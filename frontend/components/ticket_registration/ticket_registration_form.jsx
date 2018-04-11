@@ -5,34 +5,46 @@ import React from 'react';
 class TicketRegistrationForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      user_id: this.props.currentUserId,
-      ticket_id: "",
-      quantity: 0
-    };
+    let ticketOrders = {};
+    this.props.tickets.forEach(ticket => { ticketOrders[ticket.id] = 0; });
+    this.state = ticketOrders;
+    this.handleSubmit = this.handleSubmit.bind(this);
+    console.log(this.state);
   }
 
 
-  update(field) {
+  updateQuantity(id) {
     return(e) => {
-      this.setState({[field]: e.target.value });
+      this.setState({ [id]: e.target.value });
     };
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault(); 
+    let dataPayload = {};
+    for (let id of Object.keys(this.state)) {
+      dataPayload[id] = { quantity: this.state[id] };  
+    }
+    console.log(dataPayload);
+    this.props.createTicketOrders(dataPayload).then(this.props.closeModal);
+
+    // console.log(this.state);
     
+    // submittingOrders(0, numOrders).forEach(order => this.props.orderTicket(order));
+    // const lastOrder = submittingOrders[numOrders];
   }
 
 
   render() {
-    return <form>
+    return <form onSubmit={this.handleSubmit}>
         <h1>Select Tickets</h1>
-        {this.props.tickets.map(ticket => <label>
-            {" "}
+        {this.props.tickets.map(ticket => <label key={ticket.id}>
             {ticket.name}
-            <p> Tickets Remaining: {this.props.ticketsAvailable - this.state.quantity}</p>
-            <input onChange={this.update('quantity')} type="number" min="0" max={this.props.ticketsAvailable} />
+            <input onChange={this.updateQuantity(ticket.id)} type="number" min="0" max={this.props.ticketsAvailable - this.state[ticket.id]} />
+            <p>
+              Tickets Remaining:
+              {this.props.ticketsAvailable - this.state[ticket.id]}
+            </p>
           </label>)}
         <input type="submit" value="CHECKOUT" />
       </form>;
