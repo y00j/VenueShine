@@ -8,6 +8,8 @@
 
 User.destroy_all
 Event.destroy_all
+Ticket.destroy_all 
+TicketOrder.destroy_all
 
 user = User.create!({username: "michael", email: "michael@michael.com", password: "password"})
 
@@ -60,4 +62,16 @@ event5 = Event.create({
   end_date: "2018-04-26",
   image: "http://s3.us-west-1.amazonaws.com/venueshine-dev/events/images/000/000/021/original/eventbrite__show_img.jpg?1523377252",
   organizer_id: 5,
+})
+
+ticket1 = Ticket.create({
+  name: "general admission",
+  price: 99.99,
+  event_id: event1.id,
+})
+
+ticket_order1 = TicketOrder.create({
+  user_id: user.id,
+  ticket_id: ticket1.id,
+  quantity: 10,
 })

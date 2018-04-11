@@ -5,7 +5,6 @@ class EventShow extends React.Component {
   constructor(props) {
     super(props); 
     this.handleDelete = this.handleDelete.bind(this);
-    this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
@@ -16,8 +15,9 @@ class EventShow extends React.Component {
     this.props.deleteEvent(this.props.event.id).then(() => this.props.history.push('/'));
   }
   
-  handleScroll() {
-    debugger;
+
+  openPurcaseModal() {
+    
   }
 
   render() {
@@ -25,7 +25,7 @@ class EventShow extends React.Component {
     if (event === undefined) {
       return <div>loading</div>;
     }
-    return <div onScroll={this.handleScroll} className="event-show-outer-wrapper">
+    return <div className="event-show-outer-wrapper">
         <div className="event-show-wrapper">
           <div className="event-banner-container">
             <div className="event-banner-image">
@@ -37,9 +37,7 @@ class EventShow extends React.Component {
                   <div className="banner-date-month">MONTH</div>
                   <div className="banner-date-day">99</div>
                 </div>
-                <div className="banner-title">
-                  {event.title}
-                </div>
+                <div className="banner-title">{event.title}</div>
                 <div className="banner-host">by {event.organizerId}</div>
               </div>
               <div className="event-banner-details-minor">
@@ -48,7 +46,14 @@ class EventShow extends React.Component {
             </div>
           </div>
 
-          <div className="event-show-ticket-bar" onScroll={this.handleScroll}></div>
+          <div className="event-show-ticket-bar" >
+            <div className="bookmark-icon">
+              <i className="material-icons">bookmark_border</i>
+            </div>
+            <button onClick={() => this.props.openModal("register", event.id)}>
+              Register
+            </button>
+          </div>
 
           <div className="content-body">
             <div className="col-one-flex">
@@ -70,7 +75,6 @@ class EventShow extends React.Component {
                   <p>{event.address}</p>
                   <a href="#">View Map</a>
                 </div>
-
               </div>
             </div>
           </div>

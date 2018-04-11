@@ -11,7 +11,7 @@ class EventForm extends React.Component {
       address: this.props.event.address || null,
       description: this.props.event.description || null,
       imageFile: this.props.event.imageFile || null,
-      imageUrl: this.props.event.imageUrl || null,
+      imageUrl: this.props.event.image || null,
       ticketsAvailable: this.props.event.ticketsAvailable || null,
       startDate: this.props.event.startDate || null,
       endDate: this.props.event.endDate || null,
@@ -54,8 +54,8 @@ class EventForm extends React.Component {
   }
 
   render() {
-
-    return <div className="form-fields">
+    return (
+      <div className="form-fields">
         <input type="text" value={this.state.title} onChange={this.update("title")} placeholder={"title"} />
         <input type="text" onChange={this.update("address")} value={this.state.address} placeholder={"address"} />
         <textarea onChange={this.update("description")} value={this.state.description} placeholder={"description"} />
@@ -65,8 +65,9 @@ class EventForm extends React.Component {
         <input type="number" onChange={this.update("organizerId")} value={this.state.organizerId} />
         <input type="file" onChange={this.updateFile}  />
         <button onClick={this.handleSubmit}>Create Event</button>
-        <img src={this.props.event.image} />
-      </div>;
+        <img src={this.state.imageUrl} />
+      </div>
+    );
   }
 }
 
