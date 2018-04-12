@@ -1,5 +1,77 @@
 .form-fields {
   display: flex;
+  height: 100vh;
+  font-family: Benton Sans,
+  -apple-system,
+  BlinkMacSystemFont,
+  Roboto,
+  Helvetica Neue,
+  Helvetica,
+  Tahoma,
+  Arial,
+  sans-serif;
+}
+
+.form-fields input {
+  font-size: 14px;
+  border: 1px solid #C7C7C7;
+  border-radius: 10px;
+  width: 80%;
+  height: 20px;
+  padding: 5px;
+
+}
+
+.event-form {
+  height: 90%;
+  justify-content: center;
+  display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 50%;
+  margin-left: 50px;
+
+  textarea {
+    border: 1px solid #C7C7C7;
+    resize: none;
+    margin: 0px;
+    width: 335px;
+    height: 97px;
+    padding: 5px;
+    border-radius: 10px
+  }
+
+  div {
+    margin: 7px 0;
+
+  }
+  h1 {
+        margin-bottom: 5px;
+
+  }
+}
+
+ .event-form-button {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px 15px;
+  width: 180px;
+  background-color: #C7C7C7;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Nunito', sans-serif;
+  transition: 300ms linear;
+  color: white;
+ }
+
+.event-form-button:hover {
+  background-color: #1A91D5
+}
+
+.preview-image {
+  width: 50%;
+  height: 50%;
+  position: relative;
+  top: 481px;
 }

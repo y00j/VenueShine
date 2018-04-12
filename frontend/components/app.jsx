@@ -7,6 +7,7 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 import Modal from './modal/modal';
 import NavBarContainer from './nav_bar/nav_bar_container';
@@ -19,6 +20,7 @@ import EventEditFormContainer from './event_form/event_edit_form_container';
 import EventShowContainer from './event_show/event_show_container';
 
 
+
 const App = () => (
   <div>
     <header>
@@ -27,8 +29,8 @@ const App = () => (
     </header>
     <Route exact path="/" component={HeroBannerContainer} />
     <Route exact path="/" component={EventIndexContainer} />
-    <Route exact path="/new" component={EventCreateFormContainer} />
-    <Route exact path="/events/:eventId/edit" component={EventEditFormContainer} />
+    <ProtectedRoute exact path="/new" component={EventCreateFormContainer} />
+    <ProtectedRoute exact path="/events/:eventId/edit" component={EventEditFormContainer} />
     <Route exact path="/events/:eventId" component={EventShowContainer} />
   </div>
 );

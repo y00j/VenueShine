@@ -4,8 +4,9 @@ import EventForm from "./event_form";
 import { updateEvent, fetchEvent } from "../../actions/event_actions";
 
 const mapStateToProps = (state, ownProps) => {
+  // debugger;
   return({
-    event: state.entities.events[ownProps.match.params.eventId],
+    event: state.entities.events[ownProps.match.params.eventId] || {},
     formType: "Edit Event",
     organizerId: state.session.currentUser.id
   });

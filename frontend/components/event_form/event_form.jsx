@@ -5,8 +5,8 @@ import { Route, Link, withRouter } from 'react-router-dom';
 
 class EventForm extends React.Component {
   constructor(props) {
+    debugger;
     super(props);
-    console.log(this.props.event.id);
     this.state = {
       title: this.props.event.title || "",
       address: this.props.event.address || "",
@@ -23,7 +23,11 @@ class EventForm extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchEvent(this.props.event.id);
+    if (!this.props.event && this.props.formType === "Edit Event") {
+      this.props.fetchEvent(this.props.match.params.eventId);
+    } else {
+      return null;
+    }
   }
 
   update(field) {
@@ -61,21 +65,57 @@ class EventForm extends React.Component {
 
   render() {
     // debugger;
-    return (
-      <div className="form-fields">
-        <label>
-          <input type="text" value={this.state.title} onChange={this.update("title")} placeholder={"title"} />
-        </label>
-          <input type="text" onChange={this.update("address")} value={this.state.address} placeholder={"address"} />
-          <textarea onChange={this.update("description")} value={this.state.description} placeholder={"description"} />
-          <input type="number" onChange={this.update("ticketsAvailable")} value={this.state.ticketsAvailable} placeholder={"tickets available"} />
-          <input type="date" onChange={this.update("startDate")} value={this.state.startDate} />
-          <input type="date" onChange={this.update("endDate")} value={this.state.endDate} />
-          <input type="file" onChange={this.updateFile}  />
-          <button onClick={this.handleSubmit}>{this.props.formType}</button>
-          <img src={this.state.imageUrl} />
+    console.warn(this.props.event);
+    if (!this.props.event) {
+      return <div>loading</div>;
+    }
+    return <div className="form-fields">
+      <div className="column-wrapper">
+        <div className="event-form">
+          <div className="event-title-field">
+            <h1>Event Title</h1>
+            <input type="text" value={this.state.title} onChange={this.update("title")} placeholder={"title"} />
+          </div>
+
+          <div className="event-name-field">
+            <h1>Address</h1>
+            <input type="text" onChange={this.update("address")} value={this.state.address} placeholder={"address"} />
+          </div>
+
+          <div className="event-description-field">
+            <h1>Description</h1>
+            <textarea onChange={this.update("description")} value={this.state.description} placeholder={"description"} />
+          </div>
+
+          <div className="event-ticketsAvailable-field">
+            <h1>Tickets Available</h1>
+            <input type="number" onChange={this.update("ticketsAvailable")} value={this.state.ticketsAvailable} placeholder={"tickets available"} />
+          </div>
+
+          <div className="event-Begin-field">
+            <h1>Start Date</h1>
+            <input type="date" onChange={this.update("startDate")} value={this.state.startDate} />
+          </div>
+
+          <div className="event-End-field">
+            <h1>End Date</h1>
+            <input type="date" onChange={this.update("endDate")} value={this.state.endDate} />
+          </div>
+
+          <div className="event-file-field">
+            <h1>Image Upload</h1>
+            <input type="file" onChange={this.updateFile} />
+          </div>
+
+          <button className="event-form-button" onClick={this.handleSubmit}>
+            {this.props.formType}
+          </button>
+        </div>
+        <div className="form-col-2">
+          <img className="preview-image" src={this.state.imageUrl} />
+        </div>
       </div>
-    );
+    </div>;
   }
 }
 
