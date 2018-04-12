@@ -18,7 +18,7 @@ import EventIndexContainer from './event_index/event_index_container';
 import EventCreateFormContainer from './event_form/event_create_form_container';
 import EventEditFormContainer from './event_form/event_edit_form_container';
 import EventShowContainer from './event_show/event_show_container';
-
+import DashBoard from './user_dash/user_dash_container';
 
 
 const App = () => (
@@ -32,6 +32,8 @@ const App = () => (
     <ProtectedRoute exact path="/new" component={EventCreateFormContainer} />
     <ProtectedRoute exact path="/events/:eventId/edit" component={EventEditFormContainer} />
     <Route exact path="/events/:eventId" component={EventShowContainer} />
+
+    <ProtectedRoute exatct path="/dashboard" component={DashBoard} />
   </div>
 );
 

@@ -36,17 +36,22 @@ class TicketRegistrationForm extends React.Component {
 
 
   render() {
-    return <form onSubmit={this.handleSubmit}>
-        <h1>Select Tickets</h1>
-        {this.props.tickets.map(ticket => <label key={ticket.id}>
-            {ticket.name}
-            <input onChange={this.updateQuantity(ticket.id)} type="number" min="0" max={this.props.ticketsAvailable - this.state[ticket.id]} />
-            <p>
-              Tickets Remaining:
-              {this.props.ticketsAvailable - this.state[ticket.id]}
-            </p>
-          </label>)}
-        <input type="submit" value="CHECKOUT" />
+    return <form className="ticket-form" onSubmit={this.handleSubmit}>
+        <div className="ticket-form-header">
+          <h1>SELECT TICKETS</h1>
+        </div>
+        <div className="ticket-form-body">
+          {this.props.tickets.map(ticket => <div className="ticket-label" key={ticket.id}>
+            <div className="ticket-info">
+              <h1>{ticket.name}</h1>
+              <p>${ticket.price}</p>
+            </div>
+              <input onChange={this.updateQuantity(ticket.id)} type="number" min="0" max={this.props.ticketsAvailable - this.state[ticket.id]} />
+            </div>)}
+        </div>
+        <div className="ticket-form-footer">
+          <input className="ticket-form-submit" type="submit" value="CHECKOUT" />
+        </div>
       </form>;
   }
 }

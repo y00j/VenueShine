@@ -16,10 +16,6 @@ class EventShow extends React.Component {
   }
   
 
-  openPurcaseModal() {
-    
-  }
-
   render() {
     const event = this.props.event;
     if (event === undefined) {
@@ -51,7 +47,7 @@ class EventShow extends React.Component {
               <i className="material-icons">bookmark_border</i>
             </div>
             <button onClick={() => this.props.openModal("register", event.id)}>
-              Register
+              TICKETS
             </button>
           </div>
 

@@ -1,0 +1,114 @@
+
+
+.ticket-form {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  
+  font-family: Benton Sans,
+  -apple-system,
+  BlinkMacSystemFont,
+  Roboto,
+  Helvetica Neue,
+  Helvetica,
+  Tahoma,
+  Arial,
+  sans-serif;
+
+  background-color: #F7F7F9;
+
+  border-radius: 5px;
+
+
+
+}
+
+.ticket-form-header {
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EDF0F4;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  min-width: 600px;
+  box-shadow: 0 1px 1px 0 rgba(40, 44, 53, .15);
+}
+
+
+.ticket-form-body {
+  display: flex;
+  justify-content: flex-start;
+  min-height: 300px;
+  // align-items: center;
+  width: 93%;
+  margin-top: 30px;
+  flex-direction: column;
+
+    label {
+      background-color: #FFFFFF;
+      width: 92%;
+      display: flex;
+      justify-content: space-between;
+      padding: 18px;
+      box-shadow: 0 1px 0 0 rgba(0, 0, 0, .1);
+      align-items: center;
+   }
+}
+
+.ticket-form-footer {
+  display: flex;
+  width: 100%;
+  min-height: 60px;
+  justify-content: flex-end;
+  background-color: #EDF0F4;
+  box-shadow: 0 -1px 0 0 rgba(0, 0, 0, .1);
+  align-items: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.ticket-form-submit {
+  margin-right: 20px;
+  cursor: pointer;
+  background-color: #00A13C;
+  padding: 12px;
+  border-radius: 3px;
+  color: white;
+ }
+
+
+
+ .ticket-info{   
+   h1 {
+     color: #282C35;
+     font-size: 20px;
+     line-height: 30px;
+     font-weight: 400;
+     padding-bottom: 5px;
+     word-wrap: break-word;
+   }
+
+   p {
+      color: #45494E;
+      text-transform: uppercase;
+      font-size: 15px;
+      line-height: 22px;
+      padding: 0 5px 0 0;
+   }
+ }
+
+label {
+   input {
+    border: 1px solid #C7C7C7;
+    height: 40px;
+    width: 55px;
+    border-radius: 3px;
+    padding-left: 10px;
+   }
+ }
+    //  min-height: 80px;
+    //  padding: 10px;
+    //  background-color: red;

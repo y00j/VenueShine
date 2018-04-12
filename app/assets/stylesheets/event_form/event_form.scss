@@ -1,22 +1,18 @@
+
 .form-fields {
   display: flex;
-  height: 100vh;
-  font-family: Benton Sans,
-  -apple-system,
-  BlinkMacSystemFont,
-  Roboto,
-  Helvetica Neue,
-  Helvetica,
-  Tahoma,
-  Arial,
-  sans-serif;
+  justify-content: center;
+  font-family: Benton Sans, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Helvetica, Tahoma, Arial, sans-serif;
+  align-items: center;
+  padding-top: 25px;
 }
+
 
 .form-fields input {
   font-size: 14px;
   border: 1px solid #C7C7C7;
   border-radius: 10px;
-  width: 80%;
+  width: 100%;
   height: 20px;
   padding: 5px;
 
@@ -27,17 +23,16 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
-  width: 50%;
-  margin-left: 50px;
+  width:100%;
 
   textarea {
     border: 1px solid #C7C7C7;
     resize: none;
     margin: 0px;
-    width: 335px;
+    width: 100%;
     height: 97px;
     padding: 5px;
-    border-radius: 10px
+    border-radius: 10px;
   }
 
   div {
@@ -45,8 +40,7 @@
 
   }
   h1 {
-        margin-bottom: 5px;
-
+    margin-bottom: 5px;
   }
 }
 
@@ -70,8 +64,8 @@
 }
 
 .preview-image {
-  width: 50%;
-  height: 50%;
-  position: relative;
-  top: 481px;
+  display: block;
+  max-height: 200px;
+  max-width: 200px;
 }
+
