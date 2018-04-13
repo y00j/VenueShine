@@ -19,7 +19,7 @@ Users can log in by clicking the "SIGN IN" button on the navbar, which pops ups 
 
 The landing page features a slideshow carousel, and below that are the Event Index Items. The Index Items are populated using React Components, and clicking on each individual item will link to its show page. Each index item also has a clickable bookmark icon which will be filled in if the event is bookmarked. 
 
-![VenueShine LandingPage](https://github.com/yujiezhu718/venueshine_images/blob/master/event_form.png?raw=true)
+![VenueShine LandingPage](https://github.com/yujiezhu718/venueshine_images/blob/master/landing_page.png?raw=true)
 
 Bookmarked events will be saved and featured on the user's dashboard
 
