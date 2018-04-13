@@ -1,5 +1,5 @@
 import React from 'react';
-import EventIndexItem from './event_index_item';
+import EventIndexItemContainer from './event_index_item_container';
 
 class Event extends React.Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class Event extends React.Component {
         <ul className="event-index-container">
           {
             this.props.events.map((event) =>  
-              <EventIndexItem key={event.id} event={event} />
+              <EventIndexItemContainer key={event.id} event={event} />
             )
           }
         </ul>

@@ -8,8 +8,6 @@ import { ProtectedRoute } from '../../util/route_util';
 
 const DashBoard = ({currentUsername, currentProfileImage}) => {
   const activeStyle = {
-          fontWeight: 'bold',
-          color: 'green',
           borderBottom: '3px solid blue',
         };
 
@@ -19,15 +17,17 @@ const DashBoard = ({currentUsername, currentProfileImage}) => {
         <img className="profile-img" src={currentProfileImage} alt="profile-img" />
       </header>
 
-      <NavLink 
-        to="/dashboard/upcoming"
-        activeStyle={activeStyle}
-        >UPCOMING EVENT</NavLink>
-      {/* <NavLink to="/dashboard/saved">SAVED EVENTS</NavLink> */}
-      <NavLink 
-        to="/dashboard/past"
-        activeStyle={activeStyle}
-        >PAST EVENTS</NavLink>
+      <NavLink to="/dashboard/upcoming" activeStyle={activeStyle}>
+        UPCOMING EVENT
+      </NavLink>
+
+      <NavLink to="/dashboard/saved" activeStyle={activeStyle}>
+        SAVED EVENTS
+      </NavLink>
+
+      <NavLink to="/dashboard/past" activeStyle={activeStyle}>
+        PAST EVENTS
+      </NavLink>
 
       <Switch>
         <ProtectedRoute path="/dashboard/upcoming" component={UpcomingEventsContainer} />

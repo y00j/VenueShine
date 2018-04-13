@@ -1,5 +1,5 @@
 import React from "react";
-import EventIndexItem from "../event_index/event_index_item";
+import EventIndexItemContainer from "../event_index/event_index_item_container";
 
 class PastEvents extends React.Component {
   constructor(props) {
@@ -28,11 +28,10 @@ class PastEvents extends React.Component {
       return <div>loading</div>;
     }
     let pastEvents = this.getPastEvents();
-    // debugger;
     if (pastEvents.length > 0) {
       
         return pastEvents.map(event => 
-            <EventIndexItem key={event.id} event={event} />
+          <EventIndexItemContainer key={event.id} event={event} />
         );
     
     } else {

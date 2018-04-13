@@ -9,18 +9,6 @@ import PastEvents from "./past_events";
 
 const mapStateToProps = state => {
   
-  // const getPastEvents = () => {
-  //   let events = this.props.events;
-  //   let pastEvents = [];
-  //   for (let event in events) {
-  //     if (events[event].pastEvent === true) {
-  //       pastEvents.push(events[event]);
-  //     }
-  //   }
-
-  //   return pastEvents;
-  // };
-  
   return ({
     events: state.session.currentUser.attendingEvents,
     currentUser: state.session.currentUser

@@ -1,7 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
-const EventIndexItem = ({event}) => {
+
+
+const EventIndexItem = ({event, toggleBookmark, isBookmarked}) => {
+  let icon;
+  if (isBookmarked) {
+    icon = <i className="material-icons">bookmark</i>;
+  } else {
+    icon = <i className="material-icons">bookmark_border</i>;
+  }
+
   return (
     <li className="event-index-item">
       <div className="event-index-inner-wrapper">
@@ -21,13 +30,13 @@ const EventIndexItem = ({event}) => {
           <Link className="event-category" to="/">
             #Category
           </Link>
-          <Link className="bookmark-icon" to="/">
-            <i className="material-icons">bookmark_border</i>
-          </Link>
+          <div onClick={() => toggleBookmark(event.id)}className="bookmark-icon" to="/">
+            { icon }
+          </div>
         </div>
       </div>
   </li>
   );
 };
 
-export default EventIndexItem;
+export default withRouter(EventIndexItem);

@@ -1,3 +1,4 @@
+
 .event-index-wrapper {
   display: flex;
   width: 100%;
@@ -89,8 +90,13 @@
 
     .bookmark-icon {
       padding: 0 10px;
-
+      color: #45494E
     }
+    
+    .bookmark-icon:hover {
+      color: #0093D7;
+    }
+
   }
 }
 
@@ -115,10 +121,6 @@
 }
 
 .event-index-footer .event-category:hover { 
-  color: #0093D7;
-}
-
-.bookmark-icon:hover {
   color: #0093D7;
 }
 
