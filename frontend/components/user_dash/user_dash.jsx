@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink, Switch } from 'react-router-dom';
 import UpcomingEventsContainer from "./upcoming_events_container";
 import PastEventsContainer from './past_events_container';
+import SavedEventsContainer from './saved_events_container';
 import { ProtectedRoute } from '../../util/route_util';
 
 
@@ -32,6 +33,7 @@ const DashBoard = ({currentUsername, currentProfileImage}) => {
       <Switch>
         <ProtectedRoute path="/dashboard/upcoming" component={UpcomingEventsContainer} />
         <ProtectedRoute path="/dashboard/past" component={PastEventsContainer} />
+        <ProtectedRoute path="/dashboard/saved" component={SavedEventsContainer} />
       </Switch>
     </div>;
 

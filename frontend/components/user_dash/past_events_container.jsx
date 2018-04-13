@@ -3,10 +3,6 @@ import { connect } from "react-redux";
 import { fetchCurrentUser } from "../../actions/session_actions";
 import PastEvents from "./past_events";
 
-
-
-
-
 const mapStateToProps = state => {
   
   return ({

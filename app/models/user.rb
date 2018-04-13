@@ -17,7 +17,7 @@
 
 class User < ApplicationRecord
 
-  has_attached_file :image, default_url: "https://s3-us-west-1.amazonaws.com/venueshine-dev/events/default_profile_avatar.png"
+  has_attached_file :image, default_url: "https://s3-us-west-1.amazonaws.com/venueshine-dev/events/user-default.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   
   validates :username, :email, :password_digest, :session_token, presence: true

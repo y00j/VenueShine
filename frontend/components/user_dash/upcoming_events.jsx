@@ -24,12 +24,13 @@ class UpcomingEvents extends React.Component {
   }
 
   render() {
-    
-    if (!this.props.events) {
+
+    if (!this.props.currentUser) {
       return <div>loading</div>;
     }
+
     let futureEvents = this.getFutureEvents();
-    // debugger;
+
     if(futureEvents.length > 0)
     {
       return futureEvents.map(event => (

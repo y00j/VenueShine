@@ -6,12 +6,11 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import { toggleBookmark } from '../../actions/bookmark_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const isBookmarked = state.session.currentUser.bookmarks.includes(parseInt(ownProps.match.params.eventId));
   return(
     {
       event: state.entities.events[ownProps.match.params.eventId],
       modal: state.ui.modal,
-      isBookmarked: isBookmarked
+      currentUser: state.session.currentUser
     }
   );
 };

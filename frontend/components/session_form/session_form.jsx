@@ -50,6 +50,12 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    let emailField;
+    if (this.props.formType === "login") {
+      emailField = "hidden";
+    } else {
+      emailField = "text";
+    }
     return (
       <div className="login-form-container">
        
@@ -65,7 +71,7 @@ class SessionForm extends React.Component {
                 placeholder="Username"
               />
 
-              <input type="text"
+              <input type={emailField}
                 value={this.state.email}
                 onChange={this.update('email')}
                 className="login-input"

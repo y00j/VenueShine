@@ -24,7 +24,7 @@ class PastEvents extends React.Component {
   }
 
   render() {
-    if (!this.props.events) {
+    if (!this.props.currentUser) {
       return <div>loading</div>;
     }
     let pastEvents = this.getPastEvents();

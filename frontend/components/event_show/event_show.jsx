@@ -5,24 +5,10 @@ class EventShow extends React.Component {
   constructor(props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
-    this.state = this.props.isBookmarked ? (
-      <i className="material-icons">bookmark</i>
-    ) : (
-      <i className="material-icons">bookmark_border</i>
-    );
   }
 
   componentDidMount() {
     this.props.fetchEvent(parseInt(this.props.match.params.eventId));
-  }
-
-  componentWillReceiveProps(nextProps) {
-    // debugger;
-    if (nextProps.isBookmarked) {
-      this.setState(<i className="material-icons">bookmark</i>);
-    } else {
-      this.setState(<i className="material-icons">bookmark_border</i>);
-    }
   }
 
   handleDelete() {
@@ -35,6 +21,17 @@ class EventShow extends React.Component {
     const event = this.props.event;
     if (event === undefined) {
       return <div>loading</div>;
+    }
+
+    let icon;
+    if (this.props.currentUser) {
+      if (this.props.currentUser.bookmarks.includes(parseInt(event.id))) {
+        icon = <i className="material-icons">bookmark</i>;
+      } else {
+        icon = <i className="material-icons">bookmark_border</i>;
+      }
+    } else {
+      icon = <i className="material-icons">bookmark_border</i>;
     }
 
 
@@ -66,7 +63,7 @@ class EventShow extends React.Component {
               onClick={() => this.props.toggleBookmark(event.id)}
               className="bookmark-icon"
             >
-              {this.state}
+              {icon}
             </div>
             <button onClick={() => this.props.openModal("register", event.id)}>
               TICKETS

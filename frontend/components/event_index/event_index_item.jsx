@@ -2,13 +2,17 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 
-
-const EventIndexItem = ({event, toggleBookmark, isBookmarked}) => {
+const EventIndexItem = ({event, toggleBookmark, currentUser}) => {
   let icon;
-  if (isBookmarked) {
-    icon = <i className="material-icons">bookmark</i>;
+  if (currentUser){
+    if (currentUser.bookmarks.includes(parseInt(event.id))) {
+      icon = <i className="material-icons">bookmark</i>;
+    } else {
+      icon = <i className="material-icons">bookmark_border</i>;
+    }
   } else {
     icon = <i className="material-icons">bookmark_border</i>;
+
   }
 
   return (

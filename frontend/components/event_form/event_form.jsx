@@ -12,9 +12,9 @@ class EventForm extends React.Component {
       description: this.props.event.description || "",
       imageFile: this.props.event.imageFile || "",
       imageUrl: this.props.event.image || "",
-      ticketsAvailable: this.props.event.ticketsAvailable,
-      startDate: this.props.event.startDate || null,
-      endDate: this.props.event.endDate || null,
+      ticketsAvailable: this.props.event.ticketsAvailable || 0,
+      startDate: this.props.event.startDate,
+      endDate: this.props.event.endDate,
       organizerId: this.props.organizerId
     };
     this.updateFile = this.updateFile.bind(this);
@@ -71,6 +71,7 @@ class EventForm extends React.Component {
     formData.append("event[tickets_available]", this.state.ticketsAvailable);
     formData.append("event[start_date]", this.state.startDate);
     formData.append("event[end_date]", this.state.endDate);
+    formData.append("event[organizer_id]", this.state.organizerId);
 
     let eventUrl = this.props.event.id ? `events/${this.props.event.id}` : "";
 
@@ -79,8 +80,7 @@ class EventForm extends React.Component {
   }
 
   render() {
-    // debugger;
-    console.warn(this.props.event);
+
     if (!this.props.event) {
       return <div>loading</div>;
     }

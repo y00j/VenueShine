@@ -1,43 +1,19 @@
 import React from "react";
-import EventIndexItemContainer from "../event_index/event_index_item_container";
+import { connect } from "react-redux";
+import { fetchCurrentUser } from "../../actions/session_actions";
+import { fetchEvents } from "../../actions/event_actions";
+import SavedEvents from "./saved_events";
 
-class PastEvents extends React.Component {
-  constructor(props) {
-    super(props);
-    this.getpastEvents = this.getpastEvents.bind(this);
-  }
+const mapStateToProps = state => {
+  return {
+    events: state.entities.events,
+    currentUser: state.session.currentUser
+  };
+};
 
-  componentDidMount() {
-    this.props.fetchCurrentUser(this.props.currentUser.id);
-  }
+const mapDispatchToProps = dispatch => ({
+  fetchCurrentUser: id => dispatch(fetchCurrentUser(id)),
+  fetchEvents: () => dispatch(fetchEvents())
+});
 
-  getPastEvents() {
-    let events = this.props.events;
-    let pastEvents = [];
-    for (let event in events) {
-      if (events[event].pastEvent === true) {
-        pastEvents.push(events[event]);
-      }
-    }
-
-    return pastEvents;
-  }
-
-  render() {
-    if (!this.props.events) {
-      return <div>loading</div>;
-    }
-    let pastEvents = this.getPastEvents();
-    if (pastEvents.length > 0) {
-      return (
-        <div>
-          <EventIndexItemContainer event={pastEvents[0]} />
-        </div>
-      );
-    } else {
-      return null;
-    }
-  }
-}
-
-export default PastEvents;
+export default connect(mapStateToProps, mapDispatchToProps)(SavedEvents);

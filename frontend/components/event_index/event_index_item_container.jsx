@@ -5,9 +5,8 @@ import { toggleBookmark } from '../../actions/bookmark_actions';
 import EventIndexItem from './event_index_item';
 
 const mapStateToProps = (state, ownProps) => {
-  const isBookmarked = state.session.currentUser.bookmarks.includes(parseInt(ownProps.event.id));
   return{
-    isBookmarked: isBookmarked
+    currentUser: state.currentUser
   };
 };
 
