@@ -4,7 +4,6 @@ import { isEmpty } from 'lodash';
 
 class EventForm extends React.Component {
   constructor(props) {
-    // debugger;
     super(props);
     this.state = {
       title: this.props.event.title || "",
