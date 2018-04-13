@@ -33,9 +33,15 @@ class UpcomingEvents extends React.Component {
 
     if(futureEvents.length > 0)
     {
-      return futureEvents.map(event => (
-        <EventIndexItemContainer key={event.id} event={event} />
-      ));
+      return (
+        <div>
+          {
+            futureEvents.map(event =>
+              <EventIndexItemContainer key={event.id} event={event} />
+            )
+          }
+        </div>
+      ); 
     } else {
       return (null);
     }

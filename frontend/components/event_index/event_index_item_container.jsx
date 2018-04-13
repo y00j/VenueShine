@@ -6,7 +6,7 @@ import EventIndexItem from './event_index_item';
 
 const mapStateToProps = (state, ownProps) => {
   return{
-    currentUser: state.currentUser
+    currentUser: state.session.currentUser
   };
 };
 

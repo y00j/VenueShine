@@ -1,4 +1,51 @@
+.dash-board {
+  font-family: Benton Sans,
+  -apple-system,
+  BlinkMacSystemFont,
+  Roboto,
+  Helvetica Neue,
+  Helvetica,
+  Tahoma,
+  Arial,
+  sans-serif;
+}
+
 .profile-img {
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
+}
+
+.user-profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid #D2D6DF;
+}
+
+.links-container {
+  min-width: 1080px;
+  display: flex;
+}
+
+.links-container div {  
+  flex: 1;
+  text-align: center;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.links-container div a {
+  width: 60%;
+  padding-bottom: 10px;
+}
+
+header.user-profile {
+  margin-bottom: 50px;
+  h1 {
+    text-align: center;
+    margin: 20px;
+    font-size: 30px;
+    padding-top: 24px;
+  }
 }

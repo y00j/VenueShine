@@ -30,9 +30,13 @@ class SavedEvents extends React.Component {
 
     let savedEvents = this.getSavedEvents();
     if (savedEvents.length > 0) {
-      return savedEvents.map(event => (
-        <EventIndexItemContainer key={event.id} event={event} />
-      ));
+       return <div className="event-index-wrapper">
+           <ul className="event-index-container">
+             {savedEvents.map(event => (
+               <EventIndexItemContainer key={event.id} event={event} />
+             ))}
+           </ul>
+         </div>;
     } else {
       return null;
     }
