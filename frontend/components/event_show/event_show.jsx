@@ -33,10 +33,15 @@ class EventShow extends React.Component {
     } else {
       icon = <i className="material-icons">bookmark_border</i>;
     }
+    
+      // const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      // const month = months[parseInt(event.startDate.slice(5, 6)) - 1];
+      // const day = event.startDate.slice(8);
 
-          console.log(this.props.event.startDate);
+      
     return (
 
+ 
       <div className="event-show-outer-wrapper">
         <div className="event-show-wrapper">
           <div className="event-banner-container">
@@ -46,8 +51,8 @@ class EventShow extends React.Component {
             <div className="event-banner-details">
               <div className="event-banner-details-major">
                 <div className="banner-date">
-                  <div className="banner-date-month">MONTH</div>
-                  <div className="banner-date-day">99</div>
+                  <div className="banner-date-month">DATE</div>
+                  <div className="banner-date-day">{event.startDate}</div>
                 </div>
                 <div className="banner-title">{event.title}</div>
                 <div className="banner-host">by {event.organizer}</div>

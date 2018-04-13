@@ -32,8 +32,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'better_errors'
 gem 'binding_of_caller'
-gem 'pry-rails'
-gem 'annotate'
 gem 'bcrypt'
 gem 'jquery-rails'
 gem 'multi_json'
@@ -48,6 +46,9 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'pry-rails'
+  gem 'annotate'
+
 end
 
 group :development do

@@ -23,8 +23,6 @@ const sessionReducer = (state = _nullUser, action) => {
     case REMOVE_BOOKMARK:
       newState = merge({}, state);
       let bookmarkIdx = newState.currentUser.bookmarks.indexOf(parseInt(action.id));
-      console.log(newState.currentUser);
-      console.log(bookmarkIdx);
       newState.currentUser.bookmarks.splice(bookmarkIdx, 1);
       return newState;
     default: 

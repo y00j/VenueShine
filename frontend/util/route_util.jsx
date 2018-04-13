@@ -11,7 +11,6 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
         <Component {...props} />
       ) : (
         <div>
-          {console.warn("hitting auth tracks")}
           <Redirect to="/" />
         </div>
       )
@@ -28,7 +27,6 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
         <Component {...props} />
       ) : (
         <div>
-          {console.warn("hitting protected tracks")}
           <Redirect to="/" />
         </div>
       )
