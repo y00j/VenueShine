@@ -10,6 +10,7 @@ class NavBar extends React.Component {
     if (this.props.currentUser) {
       return (
         <div className="session-buttons">
+          <Link to='/dashboard/upcoming'>MY EVENTS</Link>
           <a href="#" onClick={this.props.logout}>logout</a>
         </div>
       );

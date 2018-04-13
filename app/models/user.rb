@@ -43,6 +43,14 @@ class User < ApplicationRecord
     through: :tickets, 
     source: :event
 
+  has_many :bookmarks
+  
+  has_many :bookmarked_events,
+    through: :bookmarks,
+    source: :event
+
+  
+
 
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)

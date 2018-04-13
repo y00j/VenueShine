@@ -4,7 +4,7 @@ import EventIndexItem from "../event_index/event_index_item";
 class PastEvents extends React.Component {
   constructor(props) {
     super(props);
-    this.getpastEvents = this.getpastEvents.bind(this);
+    this.getPastEvents = this.getPastEvents.bind(this);
   }
 
   componentDidMount() {
@@ -28,12 +28,13 @@ class PastEvents extends React.Component {
       return <div>loading</div>;
     }
     let pastEvents = this.getPastEvents();
+    // debugger;
     if (pastEvents.length > 0) {
-      return (
-        <div>
-          <EventIndexItem event={pastEvents[0]} />
-        </div>
-      );
+      
+        return pastEvents.map(event => 
+            <EventIndexItem key={event.id} event={event} />
+        );
+    
     } else {
       return null;
     }

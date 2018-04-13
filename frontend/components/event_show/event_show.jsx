@@ -3,25 +3,44 @@ import { Link, withRouter } from 'react-router-dom';
 
 class EventShow extends React.Component {
   constructor(props) {
-    super(props); 
+    super(props);
     this.handleDelete = this.handleDelete.bind(this);
+    this.state = this.props.isBookmarked ? (
+      <i className="material-icons">bookmark</i>
+    ) : (
+      <i className="material-icons">bookmark_border</i>
+    );
   }
 
   componentDidMount() {
     this.props.fetchEvent(parseInt(this.props.match.params.eventId));
   }
 
-  handleDelete() {
-    this.props.deleteEvent(this.props.event.id).then(() => this.props.history.push('/'));
+  componentWillReceiveProps(nextProps) {
+    // debugger;
+    if (nextProps.isBookmarked) {
+      this.setState(<i className="material-icons">bookmark</i>);
+    } else {
+      this.setState(<i className="material-icons">bookmark_border</i>);
+    }
   }
-  
+
+  handleDelete() {
+    this.props
+      .deleteEvent(this.props.event.id)
+      .then(() => this.props.history.push("/"));
+  }
 
   render() {
     const event = this.props.event;
     if (event === undefined) {
       return <div>loading</div>;
     }
-    return <div className="event-show-outer-wrapper">
+
+
+
+    return (
+      <div className="event-show-outer-wrapper">
         <div className="event-show-wrapper">
           <div className="event-banner-container">
             <div className="event-banner-image">
@@ -42,9 +61,12 @@ class EventShow extends React.Component {
             </div>
           </div>
 
-          <div className="event-show-ticket-bar" >
-            <div className="bookmark-icon">
-              <i className="material-icons">bookmark_border</i>
+          <div className="event-show-ticket-bar">
+            <div
+              onClick={() => this.props.toggleBookmark(event.id)}
+              className="bookmark-icon"
+            >
+              {this.state}
             </div>
             <button onClick={() => this.props.openModal("register", event.id)}>
               TICKETS
@@ -80,7 +102,8 @@ class EventShow extends React.Component {
             <Link to={`/events/${event.id}/edit`}>edit event</Link>
           </div>
         </div>
-      </div>;
+      </div>
+    );
   }
 }
 

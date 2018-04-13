@@ -36,5 +36,5 @@ export const logout = () => dispatch => (
 );
 
 export const fetchCurrentUser = (currentUserId) => dispatch =>
-  APIUtil.fetchUser(currentUserId).then(user => dispatch(receiveCurrentUser(user))
+  fetchUser(currentUserId).then(user => dispatch(receiveCurrentUser(user))
 );
