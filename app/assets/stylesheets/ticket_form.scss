@@ -47,7 +47,7 @@
   margin-top: 30px;
   flex-direction: column;
 
-    label {
+    .ticket-label {
       background-color: #FFFFFF;
       width: 92%;
       display: flex;
@@ -100,7 +100,7 @@
    }
  }
 
-label {
+.ticket-label {
    input {
     border: 1px solid #C7C7C7;
     height: 40px;
@@ -109,6 +109,3 @@ label {
     padding-left: 10px;
    }
  }
-    //  min-height: 80px;
-    //  padding: 10px;
-    //  background-color: red;

@@ -9,7 +9,6 @@ class TicketRegistrationForm extends React.Component {
     this.props.tickets.forEach(ticket => { ticketOrders[ticket.id] = 0; });
     this.state = ticketOrders;
     this.handleSubmit = this.handleSubmit.bind(this);
-    console.log(this.state);
   }
 
 
@@ -25,13 +24,8 @@ class TicketRegistrationForm extends React.Component {
     for (let id of Object.keys(this.state)) {
       dataPayload[id] = { quantity: this.state[id] };  
     }
-    console.log(dataPayload);
     this.props.createTicketOrders(dataPayload).then(this.props.closeModal);
 
-    // console.log(this.state);
-    
-    // submittingOrders(0, numOrders).forEach(order => this.props.orderTicket(order));
-    // const lastOrder = submittingOrders[numOrders];
   }
 
 

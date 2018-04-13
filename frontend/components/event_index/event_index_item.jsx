@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 
+
+
 const EventIndexItem = ({event, toggleBookmark, currentUser}) => {
   let icon;
   if (currentUser){
@@ -23,7 +25,7 @@ const EventIndexItem = ({event, toggleBookmark, currentUser}) => {
 
           <div className="event-index-details">
             <div className="event-date">
-              every friday {`${event.startDate}`}
+              {`${event.startDate}`}
             </div>
             <div className="event-title">{event.title}</div>
             <div className="event-location">{event.address}</div>

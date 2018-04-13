@@ -8,10 +8,9 @@ import TicketRegistrationForm from "./ticket_registration_form";
 
 const mapStateToProps = state => {
   let currentEventId = state.ui.modal.eventId;
-  // debugger;
   return {
     tickets: state.entities.events[currentEventId].tickets,
-    currentUserId: state.session.currentUser.id,
+    currentUser: state.session.currentUser,
     ticketsAvailable: state.entities.events[currentEventId].ticketsAvailable
   };
 };

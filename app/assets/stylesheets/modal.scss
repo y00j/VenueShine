@@ -18,6 +18,19 @@
 
 }
 
+.login-modal-title {
+  font-family: Benton Sans,
+  -apple-system,
+  BlinkMacSystemFont,
+  Roboto,
+  Helvetica Neue,
+  Helvetica,
+  Tahoma,
+  Arial,
+  sans-serif;
+
+}
+
 
 .login-form {
   display: flex;
@@ -29,17 +42,30 @@
 
 .title-button {
   padding: 5px;
-  font-size: 14px;
+  font-size: 17px;
   border-radius: 5px;
   margin-top: -6px;
   margin-left: 3px;
   transition: 0.5s;
+  font-family: Benton Sans,
+  -apple-system,
+  BlinkMacSystemFont,
+  Roboto,
+  Helvetica Neue,
+  Helvetica,
+  Tahoma,
+  Arial,
+  sans-serif;
+
+  color: #0093D7;
+  font-weight: 600;
+
 
 }
 
 .title-button:hover {
-  background-color: #43cf20;  
   transition: 0.5s;
+  text-decoration: underline;
 }
 
 .login-form {

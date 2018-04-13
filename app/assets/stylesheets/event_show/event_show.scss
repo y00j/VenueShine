@@ -138,8 +138,10 @@
 
 .event-buttons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   align-items: center;
+  justify-content: center;
+  padding-top: 50px;
 
   button {
     text-align: center;
@@ -154,6 +156,7 @@
     sans-serif;
     transition: 300ms linear;
     color: white;
+    margin: 20px;
   }
 
   button:hover {
@@ -163,7 +166,26 @@
 
   
 }
-
 .bookmark-icon:hover {
   color: #0093D7;
+  cursor: pointer;
+}
+
+.edit-Link {
+  text-align: center;
+  font-size: 14px;
+  padding: 10px 15px;
+  width: 180px;
+  background-color: #C7C7C7;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Nunito', sans-serif;
+  transition: 300ms linear;
+  color: white;
+  margin: 20px;
+}
+
+.edit-Link:hover {
+  background-color: #1A91D5
 }

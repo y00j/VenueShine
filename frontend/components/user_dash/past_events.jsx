@@ -30,9 +30,13 @@ class PastEvents extends React.Component {
     let pastEvents = this.getPastEvents();
     if (pastEvents.length > 0) {
       
-        return pastEvents.map(event => 
-          <EventIndexItemContainer key={event.id} event={event} />
-        );
+        return <div className="event-index-wrapper">
+            <ul className="event-index-container">
+              {pastEvents.map(event => (
+                <EventIndexItemContainer key={event.id} event={event} />
+              ))}
+            </ul>
+          </div>;
     
     } else {
       return null;

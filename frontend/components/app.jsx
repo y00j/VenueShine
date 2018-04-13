@@ -33,6 +33,13 @@ const App = () => (
     <ProtectedRoute exact path="/events/:eventId/edit" component={EventEditFormContainer} />
     <Route exact path="/events/:eventId" component={EventShowContainer} />
     <ProtectedRoute path="/dashboard" component={DashBoard} />
+
+    <footer>
+      <div className="footer-wrapper">
+        <a href="#">V</a>
+        <h1>2018 VenueShine</h1>  
+      </div>
+    </footer>
   </div>
 );
 

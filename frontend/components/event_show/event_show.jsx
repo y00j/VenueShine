@@ -19,7 +19,7 @@ class EventShow extends React.Component {
 
   render() {
     const event = this.props.event;
-    if (event === undefined) {
+    if (!event || !event.tickets) {
       return <div>loading</div>;
     }
 
@@ -34,9 +34,9 @@ class EventShow extends React.Component {
       icon = <i className="material-icons">bookmark_border</i>;
     }
 
-
-
+          console.log(this.props.event.startDate);
     return (
+
       <div className="event-show-outer-wrapper">
         <div className="event-show-wrapper">
           <div className="event-banner-container">
@@ -50,10 +50,10 @@ class EventShow extends React.Component {
                   <div className="banner-date-day">99</div>
                 </div>
                 <div className="banner-title">{event.title}</div>
-                <div className="banner-host">by {event.organizerId}</div>
+                <div className="banner-host">by {event.organizer}</div>
               </div>
               <div className="event-banner-details-minor">
-                <p>$$$</p>
+                <p>${this.props.event.tickets[0].price}</p>
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@ class EventShow extends React.Component {
 
           <div className="event-buttons">
             <button onClick={this.handleDelete}>delete event</button>
-            <Link to={`/events/${event.id}/edit`}>edit event</Link>
+            <Link className="edit-Link" to={`/events/${event.id}/edit`}>edit event</Link>
           </div>
         </div>
       </div>
