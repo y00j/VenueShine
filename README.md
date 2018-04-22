@@ -2,7 +2,7 @@
 
 [Live Demo](https://venueshine.herokuapp.com)
 
-VenueShine is a full-stack web application clone of Evetbrite. It was created with Ruby on Rails backend, PostgreSQL database, and React/Redux frontend.
+VenueShine is a full-stack web application clone of Eventbrite. It was created with Ruby on Rails backend, PostgreSQL database, and React/Redux frontend.
 
 With VenueShine, users can register for events, and create their own events. They can also bookmark events that interest them, and view their registered/past events on their dashboard.
 
