@@ -2,14 +2,13 @@
 #
 # Table name: tickets
 #
-#  id              :integer          not null, primary key
-#  name            :string           not null
-#  price           :float            not null
-#  description     :string
-#  event_id        :integer          not null
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  ticket_quantity :integer          not null
+#  id          :integer          not null, primary key
+#  name        :string           not null
+#  price       :float            not null
+#  description :string
+#  event_id    :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 
 class Ticket < ApplicationRecord

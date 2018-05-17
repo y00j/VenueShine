@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import EventForm from './event_form';
 import { createEvent } from '../../actions/event_actions';
+import { createTicket } from '../../actions/ticket_actions';
 
 const mapStateToProps = state => ({
   event: {},
@@ -10,7 +12,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  handleEvent: (event) => dispatch(createEvent(event))
+  handleEvent: (event) => dispatch(createEvent(event)),
+  handleTicket: (ticket) => dispatch(createTicket(ticket))
 });
 
 export default connect(

@@ -3,7 +3,8 @@ import configureStore from "./store/store";
 import Root from './components/root';
 import React from 'react';
 import { login, logout } from './actions/session_actions';
-import { fetchEvents } from "./actions/event_actions";
+import { fetchEvents, fetchEvent } from "./actions/event_actions";
+import { createTicket } from "./actions/ticket_actions";
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.login = login;
   window.logout = logout;
   window.fetchEvents = fetchEvents;
+  window.fetchEvent = fetchEvent;
+  window.createTicket = createTicket;
 
   ReactDOM.render( <Root store={ store }/>, root);
 });

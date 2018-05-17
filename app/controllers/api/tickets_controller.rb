@@ -21,7 +21,7 @@ class Api::TicketsController < ApplicationController
   def create 
     @ticket = Ticket.new(ticket_params)
     if @ticket.save
-      render :show 
+      redirect_to api_event_url(@ticket.event)
     else 
       render json: @ticket.errors.full_messages, status: 422
     end 

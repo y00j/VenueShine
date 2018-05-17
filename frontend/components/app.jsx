@@ -27,12 +27,14 @@ const App = () => (
       <Route path="/" component={Modal} />
       <NavBarContainer />
     </header>
-    <Route exact path="/" component={HeroBannerContainer} />
-    <Route exact path="/" component={EventIndexContainer} />
-    <ProtectedRoute exact path="/new" component={EventCreateFormContainer} />
-    <ProtectedRoute exact path="/events/:eventId/edit" component={EventEditFormContainer} />
-    <Route exact path="/events/:eventId" component={EventShowContainer} />
-    <ProtectedRoute path="/dashboard" component={DashBoard} />
+    
+      <Route exact path="/" component={HeroBannerContainer} />
+      <Route exact path="/" component={EventIndexContainer} />
+      <ProtectedRoute exact path="/new" component={EventCreateFormContainer} />
+      <ProtectedRoute exact path="/events/:eventId/edit" component={EventEditFormContainer} />
+      <Route exact path="/events/:eventId" component={EventShowContainer} />
+      <ProtectedRoute path="/dashboard" component={DashBoard} />
+    
 
     <footer>
       <div className="footer-wrapper">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Link, withRouter } from 'react-router-dom';
 import { isEmpty } from 'lodash';
+import TicketForm from '../ticket_form/ticket_form';
 
 class EventForm extends React.Component {
   constructor(props) {
@@ -76,6 +77,7 @@ class EventForm extends React.Component {
 
     if (this.state.imageFile) formData.append("event[image]", this.state.imageFile);
     this.props.handleEvent(formData, this.props.event.id).then(() => this.props.history.push(`/${eventUrl}`));
+    //must add .then(createTicket(ticket))
   }
 
   render() {
@@ -130,6 +132,8 @@ class EventForm extends React.Component {
             </button>
           </div>
         </div>
+
+        < TicketForm  />
       </div>;
   }
 }

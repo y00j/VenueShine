@@ -4,7 +4,7 @@ export const RECEIVE_EVENTS = 'RECEIVE_EVENTS';
 export const RECEIVE_EVENT = 'RECEIVE_EVENT';
 export const REMOVE_EVENT = 'REMOVE_EVENT';
 
-const receiveEvent = (event) => ({
+export const receiveEvent = (event) => ({
   type: RECEIVE_EVENT,
   event
 });
@@ -27,7 +27,7 @@ export const fetchEvents = () => dispatch => (
   ))
 );
 
-export const fetchEvent = (id) => dispatch => (
+export const fetchEvent = (id) => (dispatch) => (
   APIUtil.fetchEvent(id).then((event) => (
     (dispatch(receiveEvent(event)))
     , err => (
@@ -35,7 +35,7 @@ export const fetchEvent = (id) => dispatch => (
   ))
 );
 
-export const createEvent = (event) => dispatch => (
+export const createEvent = (event) => (dispatch) => (
   APIUtil.createEvent(event).then((data) => (
     dispatch(receiveEvent(data))
   )) 
