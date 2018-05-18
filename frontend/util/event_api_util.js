@@ -21,7 +21,7 @@ export const deleteEvent = (id) => (
 
 export const createEvent = (event) => {
   return $.ajax({
-    url: '/api/events',
+    url: 'api/events',
     method: "POST",
     processData: false,
     contentType: false,

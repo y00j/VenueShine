@@ -7,6 +7,7 @@ import { createTicket } from '../../actions/ticket_actions';
 
 const mapStateToProps = state => ({
   event: {},
+  ticket: {},
   formType: "Create Event",
   organizerId: state.session.currentUser.id
 });

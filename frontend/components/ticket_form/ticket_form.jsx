@@ -9,9 +9,24 @@ class TicketForm extends React.Component {
   }
 
   render() {
+    
     return(
-      <div>
-        ticket form 
+      <div className="ticket-form">
+        <form>
+          <label>
+            Ticket Name
+            <input type="text" onChange={this.props.updateTicket("name")}/>
+          </label>
+          <label>
+            Ticket Price
+            <input type="number" onChange={this.props.updateTicket("price")}/>
+          </label>
+          <label>
+            Ticket Description
+            <input type="text" onChange={this.props.updateTicket("description")}/>
+          </label>
+          
+        </form>
       </div>
     );
   }
