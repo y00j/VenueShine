@@ -16,7 +16,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return ({
     handleEvent: (event, id) => dispatch(updateEvent(event, id)),
-    fetchEvent: (id) => dispatch(fetchEvent(id))
   });
 };
 

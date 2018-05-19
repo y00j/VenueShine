@@ -14,7 +14,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch) => ({
   handleEvent: (event) => dispatch(createEvent(event)),
-  handleTicket: (ticket) => dispatch(createTicket(ticket))
+  createTicket: (ticket) => dispatch(createTicket(ticket))
 });
 
 export default connect(

@@ -102,10 +102,18 @@ class EventForm extends React.Component {
       .then((event) => {
         let ticket = this.state.ticket;
         ticket["event_id"] = event.event.id; //because event is wrapped in the receiveEvent action
-        return this.props.handleTicket(ticket); 
+        return this.props.createTicket(ticket); 
       })
       .then(() => this.props.history.push(`/${eventUrl}`));
     //must add .then(createTicket(ticket))
+  }
+
+  renderTicketForm() {
+    if (this.props.createTicket) {
+      return < TicketForm  updateTicket={this.updateTicket}/>;
+    } else {
+      return null;
+    }
   }
 
   render() {
@@ -162,7 +170,9 @@ class EventForm extends React.Component {
           </div>
         </div>
 
-        < TicketForm  updateTicket={this.updateTicket}/>
+        {this.renderTicketForm()}
+
+        
       </div>;
   }
 }

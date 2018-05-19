@@ -34,9 +34,6 @@ class EventShow extends React.Component {
       icon = <i className="material-icons">bookmark_border</i>;
     }
     
-      // const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-      // const month = months[parseInt(event.startDate.slice(5, 6)) - 1];
-      // const day = event.startDate.slice(8);
 
       
     return (

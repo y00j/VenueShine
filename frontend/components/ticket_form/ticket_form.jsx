@@ -13,7 +13,7 @@ class TicketForm extends React.Component {
     return(
       <div className="ticket-form">
         <form>
-          <label>
+          <label className = "ticket-name">
             Ticket Name
             <input type="text" onChange={this.props.updateTicket("name")}/>
           </label>
