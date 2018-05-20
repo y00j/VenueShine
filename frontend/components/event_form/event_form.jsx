@@ -163,6 +163,8 @@ class EventForm extends React.Component {
               <h1>Image Upload</h1>
               <input type="file" onChange={this.updateFile} />
             </div>
+            
+            {this.renderTicketForm()}
 
             <button className="event-form-button" onClick={this.handleSubmit}>
               {this.props.formType}
@@ -170,7 +172,6 @@ class EventForm extends React.Component {
           </div>
         </div>
 
-        {this.renderTicketForm()}
 
         
       </div>;

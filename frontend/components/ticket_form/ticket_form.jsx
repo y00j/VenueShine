@@ -11,7 +11,7 @@ class TicketForm extends React.Component {
   render() {
     
     return(
-      <div className="ticket-form">
+      <div className="ticket-form-field">
         <form>
           <label className = "ticket-name">
             Ticket Name
