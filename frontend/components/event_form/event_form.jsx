@@ -85,7 +85,6 @@ class EventForm extends React.Component {
 
   handleSubmit(e) {
     var formData  = new FormData(); 
-    console.log(this.state);
     formData.append("event[title]", this.state.event.title);
     formData.append("event[address]", this.state.event.address);
     formData.append("event[description]", this.state.event.description);
@@ -117,7 +116,6 @@ class EventForm extends React.Component {
   }
 
   render() {
-    console.log(this.state);
 
     if (!this.props.event) {
       return <div>loading</div>;
