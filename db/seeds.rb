@@ -65,7 +65,7 @@ titles = [
   "Bob Dylan Birthday Bash",
   "Nick's Party Extragavangza",
   "Mattie's Pyjama party",
-  "Andy's Thotbook Meet and Greet",
+  "Andy's Thoughtbook Meet and Greet",
   "Annie Hosts a Dog Event",
   "Rock Your Way To The Top: 80s Rock Climbing",
   "Follow the Follows",
@@ -101,7 +101,6 @@ descriptions = [
 ticket_availables = [10, 20, 30, 40, 50, 99, 1000, 12]
 
 
-user1 = User.create!({username: "michael", email: "michael@gmail.com", password: "password", image: "https://s3-us-west-1.amazonaws.com/venueshine-dev/events/demoUserProfileImg.jpg"})
 user2 = User.create!({username: "DemoUser", email: "demouser@gmail.com", password: "password"})
 user3 = User.create!({username: "Nima", email: "nima@gmail.com", password: "password"})
 user4 = User.create!({username: "yujie", email: "yujie@gmail.com", password: "password"})
@@ -218,7 +217,7 @@ end
 
 (0..10).each do |i|
   TicketOrder.create({
-    user_id: user1.id,
+    user_id: user2.id,
     ticket_id: Ticket.all.sample.id,
     quantity: 1
   })
