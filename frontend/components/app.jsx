@@ -22,18 +22,20 @@ import DashBoard from './user_dash/user_dash_container';
 
 
 const App = () => (
-  <div>
+  <div className="site-wrapper">
     <header>
       <Route path="/" component={Modal} />
       <NavBarContainer />
     </header>
     
+    <main className="main-wrapper">
       <Route exact path="/" component={HeroBannerContainer} />
       <Route exact path="/" component={EventIndexContainer} />
       <ProtectedRoute exact path="/new" component={EventCreateFormContainer} />
       <ProtectedRoute exact path="/events/:eventId/edit" component={EventEditFormContainer} />
       <Route exact path="/events/:eventId" component={EventShowContainer} />
       <ProtectedRoute path="/dashboard" component={DashBoard} />
+    </main>
     
 
     <footer>

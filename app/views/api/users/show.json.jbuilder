@@ -9,4 +9,3 @@ json.attending_events do
   end
 end
 json.hosting_events @user.organized_events.uniq
-
