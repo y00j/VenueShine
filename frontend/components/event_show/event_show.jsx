@@ -18,13 +18,15 @@ class EventShow extends React.Component {
   }
 
   displayEventButtons() {
-    if (this.props.event.organizer === this.props.currentUser.username) {
-      return(
-        <div className="event-buttons">
-          <button onClick={this.handleDelete}>delete event</button>
-          <Link className="edit-Link" to={`/events/${this.props.event.id}/edit`}>edit event</Link>
-        </div> 
-      );
+    if (this.props.currentUser) {
+      if (this.props.event.organizer === this.props.currentUser.username) {
+        return(
+          <div className="event-buttons">
+            <button onClick={this.handleDelete}>delete event</button>
+            <Link className="edit-Link" to={`/events/${this.props.event.id}/edit`}>edit event</Link>
+          </div> 
+        );
+      } 
     } else {
       return <div className="event-buttons"></div>;
     }
