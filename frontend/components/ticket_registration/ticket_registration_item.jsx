@@ -10,3 +10,5 @@ const TicketRegistrationItem = ({ticket, ticketsAvailable}) => {
 };
 
 export default TicketRegistrationItem;
+
+//this component is not used

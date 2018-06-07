@@ -98,9 +98,6 @@ descriptions = [
   "When you give a designer a dictionary, beautiful things happen. We are thrilled to welcome Jez Burrows to the Designers + Geeks stage for a special event celebrating his latest work, Dictionary Stories."
 ]
 
-ticket_availables = [10, 20, 30, 40, 50, 99, 1000, 12]
-
-
 user2 = User.create!({username: "DemoUser", email: "demouser@gmail.com", password: "password"})
 user3 = User.create!({username: "Nima", email: "nima@gmail.com", password: "password"})
 user4 = User.create!({username: "yujie", email: "yujie@gmail.com", password: "password"})
@@ -120,7 +117,6 @@ day = (0..27).to_a
     image: pictures.sample,
     address: addresses.sample,
     description: descriptions.sample,
-    tickets_available: ticket_availables.sample,
     start_date: Date.new(year.sample, month.sample, i),
     end_date: Date.new(2019, month.sample, i),
     organizer_id: User.all.sample.id

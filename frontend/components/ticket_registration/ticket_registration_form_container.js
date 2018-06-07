@@ -11,7 +11,6 @@ const mapStateToProps = state => {
   return {
     tickets: state.entities.events[currentEventId].tickets,
     currentUser: state.session.currentUser,
-    ticketsAvailable: state.entities.events[currentEventId].ticketsAvailable
   };
 };
 

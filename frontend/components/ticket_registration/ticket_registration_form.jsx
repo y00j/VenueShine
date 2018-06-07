@@ -1,5 +1,4 @@
 import React from 'react';
-// import TicketRegistrationItem from './ticket_registration_item';
 
 
 class TicketRegistrationForm extends React.Component {
@@ -40,7 +39,7 @@ class TicketRegistrationForm extends React.Component {
               <h1>{ticket.name}</h1>
               <p>${ticket.price}</p>
             </div>
-              <input onChange={this.updateQuantity(ticket.id)} type="number" min="0" max={this.props.ticketsAvailable - this.state[ticket.id]} />
+              <input onChange={this.updateQuantity(ticket.id)} type="number" min="0" />
             </div>)}
         </div>
         <div className="ticket-form-footer">

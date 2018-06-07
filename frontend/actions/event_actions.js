@@ -20,6 +20,7 @@ const removeEvent = (eventId) => ({
 });
 
 export const fetchEvents = () => dispatch => (
+  // dispatch(startLoading());
   APIUtil.fetchEvents().then(events => (
     dispatch(receiveEvents(events))
   ), err => (

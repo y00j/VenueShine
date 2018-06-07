@@ -6,7 +6,6 @@
 #  title              :string           not null
 #  address            :string           not null
 #  description        :text             not null
-#  tickets_available  :integer          not null
 #  start_date         :date             not null
 #  end_date           :date             not null
 #  organizer_id       :integer          not null

@@ -45,7 +45,6 @@ class Api::EventsController < ApplicationController
       :address, 
       :image, 
       :description,
-      :tickets_available,
       :start_date,
       :end_date,
       :organizer_id,

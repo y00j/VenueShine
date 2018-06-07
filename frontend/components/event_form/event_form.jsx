@@ -13,7 +13,6 @@ class EventForm extends React.Component {
                             description: this.props.event.description || "",
                             imageFile: this.props.event.imageFile || "",
                             imageUrl: this.props.event.image || "",
-                            ticketsAvailable: this.props.event.ticketsAvailable || 0,
                             startDate: this.props.event.startDate,
                             endDate: this.props.event.endDate,
                             organizerId: this.props.organizerId
@@ -42,7 +41,6 @@ class EventForm extends React.Component {
                 description: newProps.event.description,
                 imageFile: newProps.event.imageFile,
                 imageUrl: newProps.event.image,
-                ticketsAvailable: newProps.event.ticketsAvailable,
                 startDate: newProps.event.startDate,
                 endDate: newProps.event.endDate,
                 organizerId: newProps.organizerId
@@ -88,7 +86,6 @@ class EventForm extends React.Component {
     formData.append("event[title]", this.state.event.title);
     formData.append("event[address]", this.state.event.address);
     formData.append("event[description]", this.state.event.description);
-    formData.append("event[tickets_available]", this.state.event.ticketsAvailable);
     formData.append("event[start_date]", this.state.event.startDate);
     formData.append("event[end_date]", this.state.event.endDate);
     formData.append("event[organizer_id]", this.state.event.organizerId);
@@ -97,13 +94,18 @@ class EventForm extends React.Component {
 
     if (this.state.event.imageFile) formData.append("event[image]", this.state.event.imageFile);
     
-    this.props.handleEvent(formData, this.props.event.id)
-      .then((event) => {
-        let ticket = this.state.ticket;
-        ticket["event_id"] = event.event.id; //because event is wrapped in the receiveEvent action
-        return this.props.createTicket(ticket); 
-      })
+    if (this.props.formType === "Create Event") {
+      this.props.handleEvent(formData)
+        .then((event) => {
+          let ticket = this.state.ticket;
+          ticket["event_id"] = event.event.id; //because event is wrapped in the receiveEvent action
+          return this.props.createTicket(ticket); 
+        })
+        .then(() => this.props.history.push(`/${eventUrl}`));
+    } else if (this.props.formType === "Edit Event") {
+      this.props.handleEvent(formData, this.props.event.id)
       .then(() => this.props.history.push(`/${eventUrl}`));
+    }
     //must add .then(createTicket(ticket))
   }
 
@@ -136,11 +138,6 @@ class EventForm extends React.Component {
             <div className="event-description-field">
               <h1>Description</h1>
               <textarea onChange={this.updateEvent("description")} value={this.state.event.description} placeholder={"description"} />
-            </div>
-
-            <div className="event-ticketsAvailable-field">
-              <h1>Tickets Available</h1>
-              <input type="number" onChange={this.updateEvent("ticketsAvailable")} value={this.state.event.ticketsAvailable} placeholder={"tickets available"} />
             </div>
 
             <div className="event-Begin-field">
