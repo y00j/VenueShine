@@ -26,10 +26,10 @@ class EventShow extends React.Component {
             <Link className="edit-Link" to={`/events/${this.props.event.id}/edit`}>edit event</Link>
           </div> 
         );
-      } 
-    } else {
-      return <div className="event-buttons"></div>;
-    }
+      }
+    } 
+
+    return <div className="event-buttons"></div>;
   }
 
   render() {
