@@ -12,7 +12,7 @@ class Api::EventsController < ApplicationController
 
   def update 
     @event = Event.find(params[:id])
-    if @event.update(event_params) 
+    if @event.update(event_params) && @event.organizer == current_user
       render :show
     else 
       render json: @event.errors.full_messages, status: 422
@@ -22,7 +22,7 @@ class Api::EventsController < ApplicationController
   
   def destroy
     @event = Event.find(params[:id])
-    if @event
+    if @event && @event.organizer == current_user
       @event.destroy
       render "api/events/show"
     else 

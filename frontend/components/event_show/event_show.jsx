@@ -17,6 +17,19 @@ class EventShow extends React.Component {
       .then(() => this.props.history.push("/"));
   }
 
+  displayEventButtons() {
+    if (this.props.event.organizer === this.props.currentUser.username) {
+      return(
+        <div className="event-buttons">
+          <button onClick={this.handleDelete}>delete event</button>
+          <Link className="edit-Link" to={`/events/${event.id}/edit`}>edit event</Link>
+        </div> 
+      );
+    } else {
+      return <div className="event-buttons"></div>;
+    }
+  }
+
   render() {
     const event = this.props.event;
     if (!event || !event.tickets) {
@@ -97,10 +110,7 @@ class EventShow extends React.Component {
             </div>
           </div>
 
-          <div className="event-buttons">
-            <button onClick={this.handleDelete}>delete event</button>
-            <Link className="edit-Link" to={`/events/${event.id}/edit`}>edit event</Link>
-          </div>
+          {this.displayEventButtons()}
         </div>
       </div>
     );
