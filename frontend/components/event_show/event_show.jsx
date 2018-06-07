@@ -34,7 +34,8 @@ class EventShow extends React.Component {
       icon = <i className="material-icons">bookmark_border</i>;
     }
     
-
+    let eventStart = new Date(event.startDate);
+    let eventEnd = new Date(event.endDate);
       
     return (
 
@@ -49,7 +50,7 @@ class EventShow extends React.Component {
               <div className="event-banner-details-major">
                 <div className="banner-date">
                   <div className="banner-date-month">DATE</div>
-                  <div className="banner-date-day">{event.startDate}</div>
+                  <div className="banner-date-day">{eventStart.toDateString()}</div>
                 </div>
                 <div className="banner-title">{event.title}</div>
                 <div className="banner-host">by {event.organizer}</div>
@@ -83,8 +84,8 @@ class EventShow extends React.Component {
               <div className="col-two-pad">
                 <div className="date-time-section">
                   <h1>date and time</h1>
-                  <p>start date: {event.startDate}</p>
-                  <p>end date: {event.endDate}</p>
+                  <p>Start Date: {event.startDate}</p>
+                  <p>End Date: {event.endDate}</p>
                   <a href="#">Add to Calendar</a>
                 </div>
                 <div className="location-section">

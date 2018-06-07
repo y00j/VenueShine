@@ -17,6 +17,7 @@ const EventIndexItem = ({event, toggleBookmark, currentUser}) => {
 
   }
 
+  let eventDate = new Date(event.startDate);
   return (
     <li className="event-index-item">
       <div className="event-index-inner-wrapper">
@@ -25,7 +26,7 @@ const EventIndexItem = ({event, toggleBookmark, currentUser}) => {
 
           <div className="event-index-details">
             <div className="event-date">
-              {`${event.startDate}`}
+              {eventDate.toDateString()}
             </div>
             <div className="event-title">{event.title}</div>
             <div className="event-location">{event.address}</div>
