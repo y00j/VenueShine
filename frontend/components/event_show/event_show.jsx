@@ -22,7 +22,7 @@ class EventShow extends React.Component {
       return(
         <div className="event-buttons">
           <button onClick={this.handleDelete}>delete event</button>
-          <Link className="edit-Link" to={`/events/${event.id}/edit`}>edit event</Link>
+          <Link className="edit-Link" to={`/events/${this.props.event.id}/edit`}>edit event</Link>
         </div> 
       );
     } else {
